@@ -18,15 +18,20 @@ var friends = require('../data/friends.js');
      var newFriend = req.body;
      //score loop
      for(var i = 0; i < newFriend.scores.length; i++) {
-       if(newFriend.scores[i] == "1 (Yes)") {
+       if(newFriend.scores[i] == "1 (Strongly Disagree)") {
  
          newFriend.scores[i] = 1;
-       } else if(newFriend.scores[i] == "3 (No)") {
+       } else if(newFriend.scores[i] == "2") {
  
-         newFriend.scores[i] = 3;
-       } else {
+         newFriend.scores[i] = 2;
+       } else if(newFriend.scores[i] == "3") {
  
-         newFriend.scores[i] = parseInt(newFriend.scores[i]);
+        newFriend.scores[i] = 3;
+      } else if(newFriend.scores[i] == "4") {
+ 
+        newFriend.scores[i] = 4;
+      } else {
+         newFriend.scores[i] = 5;
        }
      }
      
