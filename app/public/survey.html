@@ -4,15 +4,19 @@
   <meta charset="UTF-8">
   <title>Home Page</title>
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel ="stylesheet" href ="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <link rel= "stylesheet" href ="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+ 
   <script src="../../app/routing/htmlRoutes.js"></script>
   <script src="../../app/routing/apiRoutes.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel ="stylesheet" href ="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link rel= "stylesheet" href ="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
 </head>
+
 <body>
 <div class="container">
     <h2>Survey Questions
@@ -186,7 +190,8 @@
             </div>
           </div>
         </div>
-      </div>
+</div>
+
 <script type="text/javascript">
 
 //Capture form inputs
@@ -230,8 +235,9 @@ $("#submit").on("click", function(event){
 
         };
 
+        var currentURL = window.location.origin;
         //AJAX post the data to the friends API
-        $.post("/api/friends", userData, function(data){
+        $.post(currentURL + "/api/friends", userData, function(data){
         //Modal displays the name, photo of the best match
             $("#match-name").text(data.name);
             $("#match-img").attr("src", data.photo);

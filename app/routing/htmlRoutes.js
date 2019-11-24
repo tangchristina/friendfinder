@@ -1,17 +1,15 @@
-var express = require("express");
-var path = require("path");
+var path = require('path');
 
-var PORT = process.env.PORT || 3000 ;
-var app = express();
-
-// Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "app/public/home.html"));
+//Two HTML Routes
+module.exports = function(app){
+//Get route to display the survey page
+ app.get('/survey', function (req, res) {
+    res.sendFile(path.join(__dirname, '/../public/survey.html'));
   });
-  
-  app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname, "app/public/survey.html"));
+
+ //USE route to display the home page
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, '/../public/home.html'));
   });
+
+};
