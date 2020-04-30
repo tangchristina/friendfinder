@@ -138,7 +138,7 @@
       "resolved": "https://registry.npmjs.org/ipaddr.js/-/ipaddr.js-1.9.0.tgz",
       "version": "1.9.0"
     },
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "media-typer": {
       "integrity": "sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=",
       "resolved": "https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz",
